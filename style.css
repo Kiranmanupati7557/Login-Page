@@ -1,0 +1,672 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+:root{
+    --white: #fff;
+    --black: #000; 
+    --lightBulue: #17a;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.wrapper{
+    position: relative;
+    width: 750px;
+    height: 450px;
+    background: var(--white);
+    border: 2px solid var(--black);
+    border-radius: 10px;
+    box-shadow: 0 0 20px var(--black);
+    overflow: hidden;
+}
+
+
+.wrapper .form-box{
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.wrapper .form-box.login{
+    left: 0;
+    padding: 0 60px 0 40px;
+}
+
+.form-box h2{
+    margin-bottom: 10px;
+    position: relative;
+    font-size: 32px;
+    color: var(--black);
+    text-align: center;
+}
+
+.form-box h2::after{
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 4px;
+    background: var(--black);
+}
+
+.form-box .input-box{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 25px 0;
+}
+
+.input-box input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    color: var(--black);
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid var(--black);
+    transition: .5s;
+    padding-right: 23px;
+}
+
+.input-box input:focus,
+.input-box input:valid{
+    border-bottom-color: var(--lightBulue);
+}
+
+.input-box label{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: var(--black);
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+
+.input-box input:focus~label,
+.input-box input:valid~label{
+    top: -5px;
+    color: var(--lightBulue);
+}
+
+
+.input-box i{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    font-size: 18px;
+    transition: 0.5s;
+}
+
+.input-box input:focus~i,
+.input-box input:valid~i{
+    color: var(--lightBulue);
+}
+
+form button{
+    width: 100%;
+    height: 45px;
+    background-color: var(--black);
+    color: var(--white);
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: .3s;
+}
+
+form button:hover{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+form .linkTxt{
+    font-size: 14px;
+    color: var(--black);
+    text-align: center;
+    margin: 20px 0 10px;
+}
+
+.linkTxt p a{
+    color: blue;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.wrapper .form-box.login .animation{
+    transform: translateX(0);
+    transition: 0.7s ease;
+    opacity: 1;
+    filter: blur(0);
+    transition-delay: calc(.1s * var(--j));
+}
+
+
+.wrapper.active .form-box.login .animation{
+    transform: translateX(-120%);
+    opacity: 0;
+    filter: blur(10px);
+    transition-delay: calc(.1s * var(--i));
+}
+
+
+
+
+
+
+.wrapper .info-text{
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.wrapper .info-text.login{
+    right: 0;
+    text-align: right;
+    padding: 0 40px 60px 150px;
+
+}
+
+.wrapper .info-text h2{
+    font-size: 36px;
+    color: var(--white);
+    line-height: 1.3;
+    text-transform: uppercase;
+}
+
+.wrapper .info-text p{
+    font-size: 16px;
+    color: var(--white);
+}
+
+
+.wrapper .info-text.login .animation{
+    transform: translateX(0);
+    opacity: 1;
+    filter: blur(0);
+    transition: 0.7s ease;
+    transition-delay: calc(.1s * var(--j));
+}
+.wrapper.active .info-text.login .animation{
+    transform: translateX(120px);
+    opacity: 0;
+    filter: blur(10px);
+    transition: 0.7s ease;
+    transition-delay: calc(.1s * var(--i));
+}
+
+
+
+
+
+.wrapper .rotate-bg{
+    position: absolute;
+    top: -4px;
+    right: 0;
+    width: 850px;
+    height: 600px;
+    background: #000;
+    transform: rotate(10deg) skewY(40deg);
+    transform-origin: bottom right;
+    transition: 1.5s ease;
+    transition-delay: 1.6s;
+}
+
+.wrapper.active .rotate-bg{
+    transform: rotate(0) skewY(0);
+    transition-delay: 0.5s;
+}
+
+
+
+
+
+
+
+
+
+
+
+.wrapper .form-box.register{
+    padding: 0 40px 0 60px;
+    right: 0;
+}
+
+.wrapper.active .form-box.register{
+    pointer-events: auto;
+}
+
+
+.wrapper .form-box.register .animation{
+    transform: translateX(120%);
+    opacity: 0;
+    filter: blur(10px);
+    transition: .7s ease;
+    transition-delay: calc(.1s * var(--j));
+}
+
+.wrapper.active .form-box.register .animation{
+    transform: translateX(0);
+    opacity: 1;
+    filter: blur(0);
+    transition-delay: calc(.1s * var(--i));
+}
+
+
+
+.wrapper .info-text.register{
+    left: 0;
+    text-align: left;
+    padding: 0 150px 60px 40px;
+    pointer-events: none;
+}
+
+.wrapper.active .info-text.register{
+    pointer-events: auto;
+}
+
+
+.wrapper .info-text.register .animation{
+    transform: translateX(-120%);
+    opacity: 0;
+    filter: blur(10px);
+    transition: .7s ease;
+    transition-delay: calc(.1s * var(--j));
+}
+
+.wrapper.active .info-text.register .animation{
+    transform: translateX(0);
+    opacity: 1;
+    filter: blur(0);
+    transition-delay: calc(.1s * var(--i));
+}
+
+
+
+
+.wrapper .rotate-bg2{
+    position: absolute;
+    top: 100%;
+    left: 250px;
+    width: 850px;
+    height: 700px;
+    background: var(--white);
+    transform: rotate(0) skewY(0);
+    transform-origin: bottom left;
+    transition: 1.5s ease;
+    transition-delay: 0.5s;
+}
+
+.wrapper.active .rotate-bg2{
+    transform: rotate(-11deg) skewY(-40deg);
+    transition-delay: 1.2s;
+}
+/* ✅ Options row */
+.options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  margin: 10px 0 20px;
+}
+
+.options label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #333;
+}
+
+.options a {
+  text-decoration: none;
+  color: #0066ff;
+  font-weight: 500;
+}
+
+.options a:hover {
+  text-decoration: underline;
+}
+.social-login {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.social-login p {
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #555;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.social-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: #f1f1f1;
+  border-radius: 50%;
+  font-size: 20px;
+  color: #333;
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  background: #333;
+  color: #fff;
+}
+.social-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.social-icons .divider {
+  color: #000;
+  font-weight: bold;
+  margin: 0 5px;
+}
+.social-icons a {
+  text-decoration: none;  /* ✅ removes underline */
+  font-size: 28px;        /* optional: makes icons bigger */
+  display: flex;
+  align-items: center;
+}
+
+.social-icons a i {
+  color: inherit; /* keeps the brand color */
+}
+/* Make Register heading slightly smaller */
+.register-title {
+  font-size: 1.8rem;  /* adjusted size */
+  font-weight: 600;
+}
+
+/* Keep confirm password consistent with other input boxes */
+.input-box {
+  position: relative;
+  margin: 20px 0;
+  width: 100%;
+}
+
+.input-box input {
+  width: 100%;
+  padding: 10px 35px 10px 5px;
+  border: none;
+  border-bottom: 2px solid #000;
+  outline: none;
+  font-size: 16px;
+  background: transparent;
+}
+
+.input-box label {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  font-size: 16px;
+  color: #555;
+  pointer-events: none;
+  transition: 0.3s ease;
+}
+
+.input-box input:focus ~ label,
+.input-box input:valid ~ label {
+  top: -5px;
+  font-size: 13px;
+  color: #000;
+}
+
+.input-box i {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: #333;
+}
+/* Register heading adjust */
+.register-title {
+  font-size: 1.6rem;   /* slightly smaller */
+  font-weight: 600;
+  margin-bottom: 10px; /* less space below */
+}
+
+/* Adjust the "Already have an account? Login" */
+.form-box.register .linkTxt {
+  margin-top: 10px;   /* move closer to button */
+  font-size: 14px;
+}
+/* ✅ Register heading adjustments */
+.register-title {
+  font-size: 1.5rem;      /* smaller */
+  font-weight: 600;
+  text-align: center;     /* centered */
+  margin-bottom: 20px;    /* balanced spacing */
+  margin-top: -10px;      /* pull it up a little */
+}
+
+/* ✅ Move "Already have an account? Login" closer */
+.form-box.register .linkTxt {
+  margin-top: 5px;        /* less space from button */
+  text-align: center;     /* center align like screenshot */
+  font-size: 14px;
+}
+/* ✅ Register heading adjust */
+.form-box.register .register-title {
+  font-size: 1.5rem;   /* reduce size */
+  margin-top: 10px;    /* push heading a little bit down */
+  margin-bottom: 20px; /* keep balance */
+  text-align: center;  /* center align */
+}
+
+/* ✅ "Already have an account? Login" adjust */
+.form-box.register .linkTxt {
+  margin-top: 0;       /* reduce space above */
+  position: relative;
+  top: -8px;           /* move it slightly upward */
+  text-align: center;
+  font-size: 14px;
+}
+/* ✅ Register heading */
+.form-box.register .register-title {
+  font-size: 1.6rem;      /* slightly reduced size */
+  font-weight: 600;
+  text-align: center;     /* keep centered */
+  margin-top: 20px;       /* push it down from top */
+  margin-bottom: 25px;    /* keep balance before inputs */
+}
+
+/* ✅ "Already have an account? Login" */
+.form-box.register .linkTxt {
+  margin-top: 15px;       /* correct spacing above */
+  text-align: center;     /* center aligned */
+  font-size: 14px;
+  position: static;       /* remove negative offset */
+}
+/* Register heading */
+.form-box.register .register-title {
+  font-size: 1.6rem;     /* reduce size a bit */
+  text-align: center;    /* center it */
+  margin-top: 15px;      /* bring it slightly down */
+  margin-bottom: 20px;   /* spacing before inputs */
+}
+
+/* "Already have an account? Login" */
+.form-box.register .linkTxt {
+  margin-top: 8px;       /* reduce gap (closer to button) */
+  text-align: center;    /* keep centered */
+  font-size: 14px;
+}
+/* ✅ Register heading (final adjustment) */
+.form-box.register .register-title {
+  font-size: 1.5rem;     /* reduce just a bit more */
+  text-align: center;
+  margin-top: 30px;      /* bring heading slightly lower */
+  margin-bottom: 25px;   /* keep nice gap before inputs */
+}
+
+/* ✅ "Already have an account? Login" (final adjustment) */
+.form-box.register .linkTxt {
+  margin-top: 5px;       /* almost touching the button */
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.2;      /* compact height */
+}
+/* ✅ Register heading */
+.form-box.register .register-title {
+  font-size: 1.5rem;      /* slightly smaller */
+  text-align: center;
+  margin-top: 25px;       /* lower from top */
+  margin-bottom: 20px;    /* balanced spacing */
+}
+
+/* ✅ Adjust spacing of inputs (move block a little up) */
+.form-box.register form {
+  margin-top: -10px;      /* shift form up slightly */
+}
+
+/* ✅ "Already have an account? Login" */
+.form-box.register .linkTxt {
+  margin-top: 10px;       /* close to button */
+  text-align: center;
+  font-size: 14px;
+}
+/* ✅ Shift the whole register form upward */
+.form-box.register form {
+  margin-top: -20px;   /* moves Username, Email, Password, Confirm Password upward */
+}
+
+/* ✅ Keep the Login text close to button */
+.form-box.register .linkTxt {
+  margin-top: 8px;     /* reduce gap */
+  text-align: center;
+  font-size: 14px;
+}
+/* ✅ Shift the whole register form more upward */
+.form-box.register form {
+  margin-top: -35px;   /* moved higher (was -20px before) */
+}
+
+/* ✅ Keep the Login text right under the button */
+.form-box.register .linkTxt {
+  margin-top: 6px;     /* tighter spacing */
+  text-align: center;
+  font-size: 14px;
+}
+/* ✅ Shift the whole register form higher */
+.form-box.register form {
+  margin-top: -50px;   /* moved further up (was -35px before) */
+}
+
+/* ✅ "Already have an account? Login" spacing */
+.form-box.register .linkTxt {
+  margin-top: 5px;     /* small gap below button */
+  text-align: center;
+  font-size: 14px;
+}
+/* ✅ Adjust spacing between Sign Up button and Login link */
+.form-box.register .linkTxt {
+  margin-top: 15px;     /* add more gap below button */
+  text-align: center;
+  font-size: 14px;
+}
+/* ✅ Register heading (original size & slightly higher) */
+.form-box.register .register-title {
+  font-size: 2rem;      /* back to original size */
+  text-align: center;
+  margin-top: 10px;     /* move higher */
+  margin-bottom: 20px;  /* balanced spacing before inputs */
+}
+
+/* ✅ "Already have an account? Login" (slightly up) */
+.form-box.register .linkTxt {
+  margin-top: 10px;     /* closer to button */
+  text-align: center;
+  font-size: 14px;
+}
+/* ✅ Register heading (move slightly more up) */
+.form-box.register .register-title {
+  font-size: 2rem;      /* keep original size */
+  text-align: center;
+  margin-top: 0px;      /* was 10px → now higher */
+  margin-bottom: 20px;  /* keep spacing before inputs */
+}
+/* ✅ Register heading (move further up) */
+.form-box.register .register-title {
+  font-size: 2rem;      /* keep original size */
+  text-align: center;
+  margin-top: -10px;    /* pulled up a bit more */
+  margin-bottom: 20px;  /* keep spacing before inputs */
+}
+/* ✅ Sign Up button (reduced size only) */
+.form-box.register .btn {
+  padding: 8px 20px;   /* reduce height */
+  font-size: 14px;     /* reduce text size */
+}
+/* ✅ Sign Up button (smaller size) */
+.form-box.register .btn {
+  padding: 6px 16px;   /* reduce height & width */
+  font-size: 13px;     /* smaller text */
+}
+/* ✅ Sign Up button (reduced height only) */
+.form-box.register .btn {
+  padding: 5px 20px;   /* reduce height, keep width same */
+  font-size: 14px;     /* keep text size normal */
+  width: 100%;         /* keep same width as before */
+}
+/* ✅ Sign Up button (slimmer height) */
+.form-box.register .btn {
+  padding: 3px 20px;   /* much slimmer height */
+  font-size: 14px;     /* keep text size same */
+  width: 100%;         /* keep full width */
+}
+/* ✅ Sign Up button (extra slim height only) */
+.form-box.register .btn {
+  height: 28px;        /* fixed slim height */
+  line-height: 28px;   /* align text vertically */
+  font-size: 14px;     /* keep text readable */
+  width: 100%;         /* keep full width */
+  padding: 0;          /* remove extra padding */
+}
+/* ✅ Sign Up button (slightly increased height) */
+.form-box.register .btn {
+  height: 34px;        /* a bit taller than 28px */
+  line-height: 34px;   /* keeps text centered */
+  font-size: 14px;     /* readable text */
+  width: 100%;         /* keep full width */
+  padding: 0;          /* no extra padding */
+}

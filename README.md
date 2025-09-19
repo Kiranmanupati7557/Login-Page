@@ -1,2 +1,4 @@
-# Login-Page
-The  login page allows users to securely access their GitHub accounts by entering their registered username/email and passwords and for various purposes.
+# Animated Login and Registration form using HTML CSS and JavaScript
+## Creative JS Coder
+
+<img src="./image/animated Login and Registration form.png">
